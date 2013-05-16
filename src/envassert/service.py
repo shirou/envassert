@@ -8,7 +8,7 @@ def is_enabled(service):
     func = inspect.stack()[0][3] + '_' + env.get("platform_family", 'rhel')
     return eval(func)(service)
 
-def is_enabeld_rhel(service):
+def is_enabled_rhel(service):
     return run("chkconfig --list %s | grep 3:on ; echo OK; true " % service).endswith("OK")
 
 def is_enabled_debian(service):

@@ -9,10 +9,13 @@ def is_enabled(service):
     return eval(func)(service)
 
 def is_enabled_rhel(service):
-    return run("chkconfig --list %s | grep 3:on ; echo OK; true " % service).endswith("OK")
+    with hide("everything"):
+        return run("chkconfig --list %s | grep 3:on ; echo OK; true " % service).endswith("OK")
 
 def is_enabled_debian(service):
-    return run("ls /etc/rc3.d/ | grep %s ; echo OK; true " % service).endswith("OK")
+    with hide("everything"):
+        return run("ls /etc/rc3.d/ | grep %s ; echo OK; true " % service).endswith("OK")
 
 def is_enabled_freebsd(service):
-    return run("cat /etc/rc.conf /usr/local/etc/rc.conf |grep '%s_enable=\"YES\"' ; echo OK; true" % service).endswith("OK")
+    with hide("everything"):
+        return run("cat /etc/rc.conf /usr/local/etc/rc.conf |grep '%s_enable=\"YES\"' ; echo OK; true" % service).endswith("OK")

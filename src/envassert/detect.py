@@ -29,13 +29,13 @@ def detect_os():
 def get_lsb():
     if exists("/etc/lsb-release"):
         for line in open("/etc/lsb-release").readline():
-            if line.find("DISTRIB_ID"):
+            if line.find("DISTRIB_ID") > 0:
                 return line.split("=")[1].lower()
     elif exists("/usr/bin/lsb_release"):
         with hide("everything"):
             ret = run("/usr/bin/lsb_release -a")
         for line in ret:
-            if line.find("DISTRIB_ID"):
+            if line.find("DISTRIB_ID") > 0:
                 return line.split("=")[1].lower()
     return None
 

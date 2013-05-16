@@ -7,7 +7,7 @@ sys.path.insert(0, 'src')
 import envassert
 
 
-long_description = open(os.path.join("README.rst")).read()
+long_description = open("README.rst").read()
 
 classifiers = [
     "Development Status :: 3 - Alpha",

@@ -2,7 +2,7 @@ from __future__ import with_statement
 from fabric.api import run, env, hide, sudo
 
 
-def is_exists(name=None, uid=None):
+def exists(name=None, uid=None):
     assert name != None or uid != None, "user_check: either `uid` or `name` should be given"
     assert name is None or uid is None, "user_check: `uid` and `name` both given, only one should be provided"
     if name != None:

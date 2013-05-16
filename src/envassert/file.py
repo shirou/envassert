@@ -2,7 +2,7 @@ from __future__ import with_statement
 from fabric.api import run, hide, env
 
 
-def is_exists(location):
+def exists(location):
     with hide("everything"):
         return run('test -e "%s" && echo OK ; true' % (location)).endswith("OK")
 

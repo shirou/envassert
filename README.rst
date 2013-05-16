@@ -31,7 +31,7 @@ How to Use
       def check():
           env.platform_family = detect.detect()
 
-          assert file.is_exists("/etc/hosts")
+          assert file.exists("/etc/hosts")
           assert file.is_file("/etc/hosts")
           assert file.is_dir("/tmp/")
           assert file.dir_exists("/tmp/")
@@ -47,7 +47,7 @@ How to Use
 
           assert package.installed("wget.x86_64")
 
-          assert user.is_exists("sshd")
+          assert user.exists("sshd")
           assert user.is_belonging_group("shirou", "users")
           assert group.is_exists("wheel")
 

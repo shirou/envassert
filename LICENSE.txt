@@ -1,4 +1,4 @@
-Copyright (c) 2013 WAKAYAMA Shirou
+Copyright (c) 2013 WAKAYAMA Shirou, mzeidler
 
 MIT License
 

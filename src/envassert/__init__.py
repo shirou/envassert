@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2013 WAKAYAMA Shirou
+# Copyright (c) 2013 WAKAYAMA Shirou, mzeidler
 #
 # MIT License
 #
@@ -22,4 +22,4 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-__version__ = '0.1.3'
+__version__ = '0.1.4'

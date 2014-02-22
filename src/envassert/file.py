@@ -28,14 +28,9 @@ def dir_exists(location):
 
 
 def has_line(location, line):
-    try:
-        text = open(location).read()
-    except:
-        return False
-    if text.find(line) > 0:
-        return True
-    else:
-        return False
+    with hide("everything"):
+        text = run('cat "%s"' % (location))
+        return text.find(line) > 0
 
 
 def owner_is(location, name):

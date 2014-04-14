@@ -49,7 +49,7 @@ How to Use
 
           assert user.exists("sshd")
           assert user.is_belonging_group("shirou", "users")
-          assert group.is_exists("wheel")
+          assert group.exists("wheel")
 
           assert port.is_listening(22)
           assert process.is_up("http") is False

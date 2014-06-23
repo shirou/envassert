@@ -57,6 +57,8 @@ How to Use
 
           assert cron.has_entry('shirou', 'python')
 
+          assert filesystem.is_type('ext4', '/')
+
 2. run fab
 
    ::
@@ -112,7 +114,3 @@ FYI
 - cuisine: BSD
 - serverspec: MIT
 - ohai: Apache 2
-
-
-
-

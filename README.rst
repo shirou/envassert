@@ -52,6 +52,8 @@ How to Use
           assert group.exists("wheel")
 
           assert port.is_listening(22)
+          assert port.is_listening(80, "tcp")
+
           assert process.is_up("http") is False
           assert service.is_enabled("httpd")
 

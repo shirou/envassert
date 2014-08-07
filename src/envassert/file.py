@@ -30,7 +30,7 @@ def dir_exists(location):
 def has_line(location, line):
     with hide("everything"):
         text = run('cat "%s"' % (location))
-        return text.find(line) > 0
+        return text.find(line) >= 0
 
 
 def owner_is(location, name):

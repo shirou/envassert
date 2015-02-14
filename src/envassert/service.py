@@ -10,7 +10,7 @@ def is_enabled(service):
 
 def is_enabled_rhel(service):
     with hide("everything"):
-        return run("chkconfig --list %s | grep 3:on ; echo OK; true " % service).endswith("OK")
+        return '3:on' in run("chkconfig --list %s; true " % service)
 
 def is_enabled_debian(service):
     with hide("everything"):

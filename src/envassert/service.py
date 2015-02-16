@@ -19,3 +19,8 @@ def is_enabled_debian(service):
 def is_enabled_freebsd(service):
     with hide("everything"):
 		return "YES" in run("cat /etc/rc.conf /usr/local/etc/rc.conf | grep %s_enable; true" % service)
+
+def is_disabled(service):
+    '''service disabled or not.'''
+
+    return not is_enabled(service)

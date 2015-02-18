@@ -1,5 +1,5 @@
 from __future__ import with_statement
-from fabric.api import run, hide, env
+from fabric.api import run, sudo, hide, env
 
 
 def exists(location):
@@ -30,6 +30,12 @@ def dir_exists(location):
 def has_line(location, line):
     with hide("everything"):
         text = run('cat "%s"' % (location))
+        return text.find(line) >= 0
+
+
+def has_line_super(location, line):
+    with hide("everything"):
+        text = sudo('cat "%s"' % (location))
         return text.find(line) >= 0
 
 

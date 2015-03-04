@@ -33,7 +33,7 @@ def has_line(location, line):
         return text.find(line) >= 0
 
 
-def has_line_super(location, line):
+def has_line_sudo(location, line):
     with hide("everything"):
         text = sudo('cat "%s"' % (location))
         return text.find(line) >= 0

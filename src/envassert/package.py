@@ -49,4 +49,4 @@ def installed_arch(package):
 ### freebsd
 def installed_freebsd(package):
     with hide("everything"):
-        return run("pkg_info -aI | grep %s ; echo OK ; true " % package).endswith("OK")
+        return run("pkg info -aI | grep %s && echo OK ; true " % package).endswith("OK")
